@@ -23,6 +23,21 @@ $black: #6d6e70;
 $white: #fff;
 $purple: #b9a3cd;
 
+// Mobile to Desktop
+.desktop-hide{
+    display: block;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.mobile-hide {
+    @media (min-width: 768px) {
+        display: block;
+    }
+}
+
 body {
     font: 100% $font-stack;
     color: $black;
@@ -148,8 +163,12 @@ body {
             @media (min-width: 768px) {
                 justify-content: normal;
                 float: right;
+            }
 
-                >ul {
+            
+            >ul {
+                display: none;
+                @media (min-width: 768px) {
                     background-color: $blue;
                     color: $white;
                     display: flex;
@@ -286,8 +305,7 @@ body {
 
 
     /* Call Number */
-    a.call-mobile {
-        display: block;
+    a.call.desktop-hide {
         border-bottom: 1px solid #eee;
         text-decoration: none;
         color: #6d6e70;
@@ -539,32 +557,52 @@ body {
     }
 
 
-    /* Anaphylaxis Video  */
+    /* Anaphylaxis Video Background  */
     .anaphylaxis-video {
         background-color: $lightgray;
-
-        >h2 {
-            color: $blue;
-            padding-top: 16px;
-        }
-
-        >p>a {
-            color: $red;
-            text-decoration: underline;
-        }
     }
 
-    /* Needle Video */
-    .needle-video {
-        >h2 {
+    /* Anaphylaxis and Needle Videos Style */
+    .needle-video, .anaphylaxis-video {
+        h2 {
             color: $blue;
         }
 
-        >p>a {
+        p>a {
             color: $red;
             text-decoration: underline;
         }
+  
+        @media (min-width: 768px) {       
+            .flex-container{
+                display: flex;
+                flex-direction: row;
+
+                .flex-item{
+                    flex: 1;
+                    text-align: left;
+                    margin: auto;
+                    padding: 40px 0;
+
+                    h2, p {
+                        width: 75%;
+                        margin: 0 auto;
+                        padding-bottom: 10px;
+                    }
+
+                    h2 {
+                        padding-bottom: 40px;
+                    }
+
+                    iframe {
+                        width: 44vw;
+                        height: 27vh;
+                    }
+                }
+            }
+        }
     }
+
 
     /* Made with Care */
     .made-with-care {
@@ -574,7 +612,7 @@ body {
             background-color: $blue;
             height: 120px;
 
-            >h2 {
+            h2 {
                 color: $white;
                 position: relative;
                 top: 50%;
@@ -582,28 +620,66 @@ body {
                 text-align: left;
                 padding-left: 20px;
             }
-
-            >h3 {
-                color: $red;
-            }
-
         }
 
-        >ul {
-            text-align: left;
-
-            >li {
-                padding-bottom: 5px;
+        h3 {
+            color: $red;
+            @media (min-width: 768px) {
+                text-align: left;
+                padding: 0 32px;
             }
         }
+        
+        .flex-container{
+            @media (min-width: 768px) {
+                display: flex;
+                flex-direction: row;
+                padding: 16px 32px;
+            }
 
-        >p {
-            text-align: left;
+            .flex-item{
+                ul {
+                    text-align: left;
+        
+                    >li {
+                        padding-bottom: 5px;
+                    }
+                }
+        
+                p {
+                    text-align: left;
+                }
+                
+                @media (min-width: 768px) {    
+                    li, p {
+                        font-size: $fs;
+                        margin: 0 0 10px;
+                    }                
+                    iframe {
+                        width: 44vw;
+                        height: 27vh;
+                    }
+                }
+            }
         }
     }
 
     /* Developed by Patients */
+    .developed{
+        @media (min-width: 768px) {
+            text-align: left;
+            padding: 16px 32px;
 
+            p{
+                margin: 0 0 20px;
+                width: 90%;
+                a {
+                    color: red;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 
     /* Good Fit? */
     .good-fit {

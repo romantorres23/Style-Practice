@@ -1,3 +1,13 @@
+.desktop-hide {
+  display: block; }
+  @media (min-width: 768px) {
+    .desktop-hide {
+      display: none; } }
+
+@media (min-width: 768px) {
+  .mobile-hide {
+    display: block; } }
+
 body {
   font: 100% "brandon-grotesque", sans-serif;
   color: #6d6e70;
@@ -15,8 +25,8 @@ body {
   /* Auvi-Q Administration */
   /* Design that Makes a Difference */
   /* Easy to Use */
-  /* Anaphylaxis Video  */
-  /* Needle Video */
+  /* Anaphylaxis Video Background  */
+  /* Anaphylaxis and Needle Videos Style */
   /* Made with Care */
   /* Developed by Patients */
   /* Good Fit? */ }
@@ -105,7 +115,10 @@ body {
     @media (min-width: 768px) {
       body nav.top > ul {
         justify-content: normal;
-        float: right; }
+        float: right; } }
+    body nav.top > ul > ul {
+      display: none; }
+      @media (min-width: 768px) {
         body nav.top > ul > ul {
           background-color: #00aaeb;
           color: #fff;
@@ -193,8 +206,7 @@ body {
       @media (min-width: 768px) {
         body nav.menu > ul > .current {
           border-bottom: 5px solid #ee3e2a; } }
-  body a.call-mobile {
-    display: block;
+  body a.call.desktop-hide {
     border-bottom: 1px solid #eee;
     text-decoration: none;
     color: #6d6e70;
@@ -203,7 +215,7 @@ body {
     font-weight: 600;
     padding: 12px 0; }
     @media (min-width: 768px) {
-      body a.call-mobile {
+      body a.call.desktop-hide {
         border-bottom: none;
         display: none; } }
   body .grow-with-patients {
@@ -360,37 +372,75 @@ body {
           margin: 0; }
   body .anaphylaxis-video {
     background-color: #f1f1f1; }
-    body .anaphylaxis-video > h2 {
-      color: #00aaeb;
-      padding-top: 16px; }
-    body .anaphylaxis-video > p > a {
-      color: #ee3e2a;
-      text-decoration: underline; }
-  body .needle-video > h2 {
+  body .needle-video h2, body .anaphylaxis-video h2 {
     color: #00aaeb; }
-  body .needle-video > p > a {
+  body .needle-video p > a, body .anaphylaxis-video p > a {
     color: #ee3e2a;
     text-decoration: underline; }
+  @media (min-width: 768px) {
+    body .needle-video .flex-container, body .anaphylaxis-video .flex-container {
+      display: flex;
+      flex-direction: row; }
+      body .needle-video .flex-container .flex-item, body .anaphylaxis-video .flex-container .flex-item {
+        flex: 1;
+        text-align: left;
+        margin: auto;
+        padding: 40px 0; }
+        body .needle-video .flex-container .flex-item h2, body .needle-video .flex-container .flex-item p, body .anaphylaxis-video .flex-container .flex-item h2, body .anaphylaxis-video .flex-container .flex-item p {
+          width: 75%;
+          margin: 0 auto;
+          padding-bottom: 10px; }
+        body .needle-video .flex-container .flex-item h2, body .anaphylaxis-video .flex-container .flex-item h2 {
+          padding-bottom: 40px; }
+        body .needle-video .flex-container .flex-item iframe, body .anaphylaxis-video .flex-container .flex-item iframe {
+          width: 44vw;
+          height: 27vh; } }
   body .made-with-care {
     background-color: #f1f1f1; }
     body .made-with-care > header {
       background-color: #00aaeb;
       height: 120px; }
-      body .made-with-care > header > h2 {
+      body .made-with-care > header h2 {
         color: #fff;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
         text-align: left;
         padding-left: 20px; }
-      body .made-with-care > header > h3 {
-        color: #ee3e2a; }
-    body .made-with-care > ul {
+    body .made-with-care h3 {
+      color: #ee3e2a; }
+      @media (min-width: 768px) {
+        body .made-with-care h3 {
+          text-align: left;
+          padding: 0 32px; } }
+    @media (min-width: 768px) {
+      body .made-with-care .flex-container {
+        display: flex;
+        flex-direction: row;
+        padding: 16px 32px; } }
+    body .made-with-care .flex-container .flex-item ul {
       text-align: left; }
-      body .made-with-care > ul > li {
+      body .made-with-care .flex-container .flex-item ul > li {
         padding-bottom: 5px; }
-    body .made-with-care > p {
+    body .made-with-care .flex-container .flex-item p {
       text-align: left; }
+    @media (min-width: 768px) {
+      body .made-with-care .flex-container .flex-item li, body .made-with-care .flex-container .flex-item p {
+        font-size: 26px;
+        margin: 0 0 10px; }
+      body .made-with-care .flex-container .flex-item iframe {
+        width: 44vw;
+        height: 27vh; } }
+  @media (min-width: 768px) {
+    body .developed {
+      text-align: left;
+      padding: 16px 32px; }
+      body .developed p {
+        margin: 0 0 20px;
+        width: 90%; }
+        body .developed p a {
+          color: red;
+          text-decoration: underline; } }
   body .good-fit {
     background-color: #f1f1f1;
     padding-bottom: 16px; }
